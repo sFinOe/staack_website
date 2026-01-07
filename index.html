@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stack Poker - Poker practice that feels like a game. Fast mini-games, bite-sized learning, and simple session tracking.">
+  <title>Stack Poker - Poker Practice That Feels Like a Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♠️</text></svg>">
+</head>
+<body class="bg-bg-light">
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="/" class="flex items-center">
+          <img src="/images/logo.png" alt="Stack Poker" class="h-8 invert header-logo">
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#faq" class="nav-link">FAQ</a>
+          <a href="https://apps.apple.com/us/app/stack-poker-bankroll-tracker/id6745683972" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm">Download</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+          <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu md:hidden">
+    <div class="flex items-center justify-between p-4 border-b border-gray-100">
+      <img src="/images/logo.png" alt="Stack Poker" class="h-8 invert header-logo">
+      <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="flex flex-col p-4 space-y-4">
+      <a href="#features" class="mobile-menu-link text-lg font-medium text-gray-700 hover:text-poker-green py-2">Features</a>
+      <a href="#faq" class="mobile-menu-link text-lg font-medium text-gray-700 hover:text-poker-green py-2">FAQ</a>
+      <a href="https://apps.apple.com/us/app/stack-poker-bankroll-tracker/id6745683972" target="_blank" rel="noopener noreferrer" class="mobile-menu-link btn-primary text-center mt-4">Download</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Hero Content -->
+        <div class="text-center lg:text-left">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-balance tracking-tight gradient-text">
+            Poker practice that feels like a game.
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-gray-600 max-w-lg mx-auto lg:mx-0">
+            Fast mini-games to sharpen your instincts. Bite-sized lessons that actually stick. Simple tracking to see your progress.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+            <a href="https://apps.apple.com/us/app/stack-poker-bankroll-tracker/id6745683972" target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-auto">
+              <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              Download on the App Store
+            </a>
+            <a href="#features" class="text-poker-green font-medium hover:text-poker-green-dark transition-colors flex items-center">
+              See how it works
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual - Phone Mockup -->
+        <div class="relative flex justify-center lg:justify-end">
+          <div id="hero-phone" class="phone-frame w-64 sm:w-72 parallax-phone">
+            <div class="phone-screen aspect-[9/19.5]">
+              <img src="/images/cta.png" alt="Stack Poker app" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <!-- Decorative elements -->
+          <div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-poker-green/5 rounded-full blur-3xl"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gold Divider -->
+  <div class="gold-divider my-8"></div>
+
+  <!-- Features Section -->
+  <section id="features" class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Play Section -->
+      <div class="mb-20 md:mb-32">
+        <div class="text-center mb-12 animate-on-scroll">
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-poker-green/10 text-poker-green text-sm font-medium mb-4">
+            <span class="w-1.5 h-1.5 bg-poker-gold rounded-full mr-2"></span>
+            Play
+          </div>
+          <h2 class="section-title">Sharpen your skills in minutes, not hours.</h2>
+          <p class="section-subtitle mx-auto">Quick, focused games that build real poker instincts.</p>
+        </div>
+
+        <!-- Range Rush -->
+        <div class="feature-card mb-8 animate-on-scroll stagger-1">
+          <div class="grid md:grid-cols-2 gap-0">
+            <div class="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Range Rush</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Test your preflop instincts under pressure. Quick-fire decisions on whether to fold, call, or raise—see how you stack up on the leaderboard.
+              </p>
+            </div>
+            <div class="bg-gradient-to-br from-poker-green/5 to-poker-gold/5 p-8 flex items-center justify-center order-1 md:order-2">
+              <div class="phone-frame w-48 sm:w-56 shadow-xl">
+                <div class="phone-screen aspect-[9/19.5]">
+                  <img src="/images/range_rush.png" alt="Range Rush gameplay" class="w-full h-full object-cover">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Equity Guesser -->
+        <div class="feature-card mb-8 animate-on-scroll stagger-2">
+          <div class="grid md:grid-cols-2 gap-0">
+            <div class="bg-gradient-to-br from-poker-gold/5 to-poker-green/5 p-8 flex items-center justify-center">
+              <div class="phone-frame w-48 sm:w-56 shadow-xl">
+                <div class="phone-screen aspect-[9/19.5]">
+                  <img src="/images/equity.png" alt="Equity Guesser gameplay" class="w-full h-full object-cover">
+                </div>
+              </div>
+            </div>
+            <div class="p-8 md:p-12 flex flex-col justify-center">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Equity Guesser</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Guess who's ahead and by how much. A fun way to build hand-vs-hand intuition without memorizing charts.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daily Spot -->
+        <div class="feature-card animate-on-scroll stagger-3">
+          <div class="grid md:grid-cols-2 gap-0">
+            <div class="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Daily Spot</h3>
+              <p class="text-gray-600 leading-relaxed">
+                One new poker puzzle every day. Analyze the situation, make your play, and compare your thinking to optimal strategy.
+              </p>
+            </div>
+            <div class="bg-gradient-to-br from-poker-green/5 to-poker-gold/5 p-8 flex items-center justify-center order-1 md:order-2">
+              <div class="phone-frame w-48 sm:w-56 shadow-xl">
+                <div class="phone-screen aspect-[9/19.5]">
+                  <img src="/images/daily.png" alt="Daily Spot puzzle" class="w-full h-full object-cover">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Learn Section -->
+      <div class="mb-20 md:mb-32">
+        <div class="text-center mb-12 animate-on-scroll">
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-poker-green/10 text-poker-green text-sm font-medium mb-4">
+            <span class="w-1.5 h-1.5 bg-poker-gold rounded-full mr-2"></span>
+            Learn
+          </div>
+          <h2 class="section-title">Get better without the overwhelm.</h2>
+          <p class="section-subtitle mx-auto">Structured lessons that build real understanding.</p>
+        </div>
+
+        <!-- Learning Modules (Coming Soon) -->
+        <div class="feature-card animate-on-scroll">
+          <div class="grid md:grid-cols-2 gap-0">
+            <div class="bg-gradient-to-br from-poker-gold/5 to-poker-green/5 p-8 flex items-center justify-center min-h-[300px]">
+              <div class="text-center">
+                <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-white shadow-lg flex items-center justify-center">
+                  <svg class="w-10 h-10 text-poker-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                  </svg>
+                </div>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-poker-gold/20 text-poker-gold text-sm font-medium">
+                  Coming Soon
+                </span>
+              </div>
+            </div>
+            <div class="p-8 md:p-12 flex flex-col justify-center">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Learning Modules</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Bite-sized lessons that teach you poker from the ground up—hand rankings, position, pot odds, ranges, and beyond. Each module mixes clear explanations with quick quizzes so concepts actually stick. Progress at your own pace, pick up where you left off, and build real skills one step at a time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Track Section -->
+      <div>
+        <div class="text-center mb-12 animate-on-scroll">
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-poker-green/10 text-poker-green text-sm font-medium mb-4">
+            <span class="w-1.5 h-1.5 bg-poker-gold rounded-full mr-2"></span>
+            Track
+          </div>
+          <h2 class="section-title">See your progress, spot your leaks.</h2>
+          <p class="section-subtitle mx-auto">Know where you're winning and where you need work.</p>
+        </div>
+
+        <!-- Session Tracking -->
+        <div class="feature-card mb-8 animate-on-scroll stagger-1">
+          <div class="grid md:grid-cols-2 gap-0">
+            <div class="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Session Tracking</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Log every session in seconds—stakes, duration, result, location. Build a complete history of your poker journey without spreadsheets.
+              </p>
+            </div>
+            <div class="bg-gradient-to-br from-poker-green/5 to-poker-gold/5 p-8 flex items-center justify-center order-1 md:order-2">
+              <div class="phone-frame w-48 sm:w-56 shadow-xl">
+                <div class="phone-screen aspect-[9/19.5]">
+                  <img src="/images/track.png" alt="Session tracking" class="w-full h-full object-cover">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics -->
+        <div class="feature-card animate-on-scroll stagger-2">
+          <div class="grid md:grid-cols-2 gap-0">
+            <div class="bg-gradient-to-br from-poker-gold/5 to-poker-green/5 p-8 flex items-center justify-center">
+              <div class="phone-frame w-48 sm:w-56 shadow-xl">
+                <div class="phone-screen aspect-[9/19.5]">
+                  <img src="/images/analytics.png" alt="Analytics dashboard" class="w-full h-full object-cover">
+                </div>
+              </div>
+            </div>
+            <div class="p-8 md:p-12 flex flex-col justify-center">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Analytics</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Visualize your results over time. Filter by game type, stakes, or date range to understand where you're winning and where you're leaking.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mid-page CTA -->
+  <section class="py-16 md:py-20 bg-poker-green">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Start improving today.</h2>
+      <a href="https://apps.apple.com/us/app/stack-poker-bankroll-tracker/id6745683972" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 bg-white text-poker-green font-semibold rounded-lg
+                 transition-all duration-200 hover:bg-gray-100 hover:shadow-lg hover:-translate-y-0.5">
+        <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        Download on the App Store
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 animate-on-scroll">
+        <h2 class="section-title">Frequently asked questions</h2>
+        <p class="section-subtitle mx-auto">Everything you need to know about Stack Poker.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-sm divide-y divide-gray-100 animate-on-scroll">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+          <button class="faq-question px-6">
+            <span>Who is this for?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-6 pb-5 text-gray-600">
+              Stack Poker is built for casual poker players who want to improve without grinding solvers, watching hours of videos, or memorizing charts. Whether you play home games, low-stakes online, or just enjoy poker as a hobby, Stack Poker helps you sharpen your instincts in a fun, low-pressure way.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+          <button class="faq-question px-6">
+            <span>How much time does it take per day?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-6 pb-5 text-gray-600">
+              As little as 5–10 minutes. Most games and puzzles are designed to be played in short sessions, so you can practice whenever you have a few spare minutes—no long study sessions required.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+          <button class="faq-question px-6">
+            <span>Is this for beginners or experienced players?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-6 pb-5 text-gray-600">
+              Both. Beginners can learn the fundamentals step by step, while more experienced players can use the games and tracking tools to reinforce decision-making and spot leaks. You can engage with the parts of the app that match your skill level.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+          <button class="faq-question px-6">
+            <span>Do I need to play real money poker?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-6 pb-5 text-gray-600">
+              No. Stack Poker is a training and practice app. You can use it to build skills and track sessions whether you play real money, play casually with friends, or just want to understand poker better.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item">
+          <button class="faq-question px-6">
+            <span>What platforms are supported?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-6 pb-5 text-gray-600">
+              Stack Poker is currently available on iOS. Support for additional platforms is planned.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="faq-item">
+          <button class="faq-question px-6">
+            <span>Is a web version coming?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-6 pb-5 text-gray-600">
+              Yes. A web version is planned so you'll be able to use Stack Poker from your computer in the future.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download CTA Section -->
+  <section id="download" class="py-16 md:py-24 bg-gradient-to-b from-bg-light to-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ready to level up your game?</h2>
+      <p class="text-lg text-gray-600 mb-8 max-w-xl mx-auto">
+        Download Stack Poker and start building better poker instincts today.
+      </p>
+      <a href="https://apps.apple.com/us/app/stack-poker-bankroll-tracker/id6745683972" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex">
+        <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        Download on the App Store
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="mb-6 md:mb-0">
+          <span class="text-xl font-bold">Stack Poker</span>
+        </div>
+        <div class="flex items-center space-x-8 mb-6 md:mb-0">
+          <a href="/privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
+          <a href="/support.html" class="text-gray-400 hover:text-white transition-colors">Support</a>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-gray-800 text-center md:text-left">
+        <p class="text-gray-500 text-sm">&copy; 2025 StackFlow Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
