@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:api": "npx tsx watch dev-server.ts",
     "dev:vercel": "vercel dev",
     "build": "vite build",
     "preview": "vite preview"
