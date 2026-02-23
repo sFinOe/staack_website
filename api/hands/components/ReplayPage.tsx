@@ -1,9 +1,9 @@
 import React from 'react';
-import { Header } from './Header';
-import { TableContainer } from './TableContainer';
-import { Controls } from './Controls';
-import { WinOverlay } from './WinOverlay';
-import { CtaOverlay } from './CtaOverlay';
+import { Header } from './Header.js';
+import { TableContainer } from './TableContainer.js';
+import { Controls } from './Controls.js';
+import { WinOverlay } from './WinOverlay.js';
+import { CtaOverlay } from './CtaOverlay.js';
 
 interface ReplayPageProps {
   id: string;

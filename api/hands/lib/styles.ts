@@ -1,5 +1,5 @@
-import { getTableStyles } from './styles-table';
-import { getOverlayStyles } from './styles-overlay';
+import { getTableStyles } from './styles-table.js';
+import { getOverlayStyles } from './styles-overlay.js';
 
 const getBaseStyles = (): string => `
 :root {
