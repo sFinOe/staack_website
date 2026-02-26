@@ -14,6 +14,7 @@ export default defineConfig({
         "range-training": resolve(__dirname, "range-training.html"),
         "session-tracking": resolve(__dirname, "session-tracking.html"),
         404: resolve(__dirname, "404.html"),
+        invite: resolve(__dirname, "invite.html"),
       },
     },
   },
