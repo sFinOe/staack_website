@@ -59,11 +59,21 @@ function getClientIP(req: VercelRequest): string | null {
 
 function getDb(): FirebaseFirestore.Firestore {
   if (getApps().length === 0) {
+    const projectId = process.env.FIREBASE_PROJECT_ID;
+    const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
+    const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n");
+
+    console.log(`[DEBUG] Firebase init - projectId exists: ${!!projectId}, clientEmail exists: ${!!clientEmail}, privateKey exists: ${!!privateKey}`);
+
+    if (!projectId || !clientEmail || !privateKey) {
+      throw new Error(`Missing Firebase credentials: projectId=${!!projectId}, clientEmail=${!!clientEmail}, privateKey=${!!privateKey}`);
+    }
+
     initializeApp({
       credential: cert({
-        projectId: process.env.FIREBASE_PROJECT_ID,
-        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-        privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+        projectId,
+        clientEmail,
+        privateKey,
       }),
     });
   }
